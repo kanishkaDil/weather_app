@@ -1,14 +1,30 @@
-name: celsius_to_fahrenheit unit test
-run-name: ${{ github.actor }} unit test
-on: [push]
+name: CI/CD
+
+on:
+  push:
+    branches: [ master ]
+
 jobs:
-  check-bats-version:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: cd weather-app
-      - run: npm install
-      - run: npm test
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: cd weather-app
+      run: npm install
+
+    - name: Run the tests
+      run: npm test
