@@ -20,8 +20,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
+    - name: Go inside file
       run: cd weather-app
+
+    - name: Install dependencies
       run: npm install
 
     - name: Run the tests
