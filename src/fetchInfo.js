@@ -13,10 +13,10 @@ export async function fetchInfo() {
 
   try {
     const response = await axios.request(options); // wait for the response
-    console.log(response.data);
+    // console.log(response.data);
     return response.data.current.feelslike_c;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return error;
   }
 }
