@@ -1,4 +1,4 @@
-const celsius_to_fahrenheit = require("./celsius_to_fahrenheit")
+import celsius_to_fahrenheit from "./celsius_to_fahrenheit";
 
 test('convert 0 celsius to f ', () => {
   expect(celsius_to_fahrenheit(0)).toBe(32);
