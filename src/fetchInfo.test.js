@@ -7,7 +7,7 @@ describe('fetchInfo', () => {
       const expectedData = { current: { feelslike_c: 25 } };
       axios.request.mockResolvedValueOnce({ data: expectedData }); // set the mock response
   
-      const data = await fetchInfo(); // call the function
+      const data = await fetchInfo("6.94,79.85"); // call the function
   
       expect(data).toEqual(expectedData.current.feelslike_c); // assert that the data is correct
       expect(axios.request).toHaveBeenCalledTimes(1); // assert that the axios request was called once

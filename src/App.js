@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import Result from './Result';
+import img1 from './assets/img1.png'
 import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div >
+      <div class="box">
+      <div><h1>Weather App</h1>;</div>
+      <div><img style={{ width: 400, height: 380 }} src={img1} alt="Logo" />;</div>
+      </div>
+      <div class="box">
+      <div>
+      <Result cordinate="6.94,79.85" city="Colombo"/>
+      </div>
+      <div>
+      <Result cordinate="7.29,80.63" city="Kandy"/>
+      </div>
+      <div>
+      <Result cordinate="6.03,80.21" city="Galle"/>
+      </div>
+      </div>
     </div>
   );
 }
