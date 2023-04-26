@@ -1,6 +1,7 @@
 import Result from './Result';
 import img1 from './assets/img1.png'
 import './App.css';
+import { BsGithub } from 'react-icons/bs';
 function App() {
   return (
     
@@ -19,6 +20,13 @@ function App() {
       <div>
       <Result cordinate="6.03,80.21" city="Galle"/>
       </div>
+      <div>
+      <Result cordinate="6.99,81.05" city="Badulla"/>
+      </div>
+      </div>
+      
+      <div style={{textAlign: 'right'}}>
+      <h3><a href="https://github.com/kanishkaDil/weather_app">Git<BsGithub /></a></h3>
       </div>
     </div>
   );

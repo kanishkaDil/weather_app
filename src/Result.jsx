@@ -8,6 +8,7 @@ function Result(props) {
   const [temperature, setTemperature] = useState("");
   const [click, setClick] = useState(1);
   const [simbol, setSimbol] = useState("°C");
+  const [buttontext, setButtontext]= useState("Covert to °F");
 
   useEffect(() => {
     const getTemperature = async () => {
@@ -24,11 +25,13 @@ function Result(props) {
       setTemperature(celsius_to_fahrenheit(temperature).toFixed(2));
       setClick(0);
       setSimbol("°F");
+      setButtontext("Covert to °C");
     }else{
       const getTemperature = async () => {
         const temperatureData = await fetchInfo(props.cordinate);
         setTemperature(temperatureData);
         setSimbol("°C");
+        setButtontext("Covert to °F");
       };
   
       getTemperature();
@@ -50,7 +53,7 @@ function Result(props) {
     }}>
       <h2>{props.city}</h2>
       <h3>Current temp: {temperature}{simbol}</h3>
-      <button onClick={handleClick}>°C----°F</button>
+      <button onClick={handleClick}>{buttontext}</button>
     </div>
   );
 }
