@@ -51,9 +51,9 @@ function Result(props) {
       borderBlockColor: 'black',
 
     }}>
-      <h2>{props.city}</h2>
-      <h3>Current temp: {temperature}{simbol}</h3>
-      <button onClick={handleClick}>{buttontext}</button>
+      <h2 data-cy="display">{props.city}</h2>
+      <h3 data-cy="displayData">Current temp: {temperature}{simbol}</h3>
+      <button data-cy="change" onClick={handleClick}>{buttontext}</button>
     </div>
   );
 }
