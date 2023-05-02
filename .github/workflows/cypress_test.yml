@@ -11,8 +11,7 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5
-      - name: E2E test
-        uses:  npm run cy:run -- --spec "cypress/e2e/spec.cy.js"
-      - name: Component test
-        uses:  npm run cy:run -- --component "Result.cy.js"
+              uses: cypress-io/github-action@v5
+              with:
+                build: npm run build
+                start: npm start
